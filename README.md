@@ -1,8 +1,6 @@
-# Nudny Arg Parser
+# Nudny Utilitu module
 
-This project is nudny.
-
-This module is to parse parameters send to application via consile line
+Some usefull class and stuff.
 
 ## Features
 - cmake presets
