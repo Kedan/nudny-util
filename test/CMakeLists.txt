@@ -4,6 +4,11 @@ add_executable(${MOD_NAME}_UT
 	src/nudny/core/arg/Parser_test.cpp
 )
 
+target_include_directories(${MOD_NAME}
+	PUBLIC
+	${CMAKE_CURRENT_SOURCE_DIR}/${INC_DIR}
+)
+
 target_link_libraries(
 	${MOD_NAME}_UT
 	GTest::gtest_main
