@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.23)
 
 add_executable(${MOD_NAME}_UT
-	src/nudny/core/arg/Parser_test.cpp
+	src/callback_queue.cpp
 )
 
-target_include_directories(${MOD_NAME}
+target_include_directories(${MOD_NAME}_UT
 	PUBLIC
-	${CMAKE_CURRENT_SOURCE_DIR}/${INC_DIR}
+		${CMAKE_CURRENT_SOURCE_DIR}/${INC_DIR}
+		${ROOT_DIR}/${TEST_DIR}/include/
 )
 
 target_link_libraries(

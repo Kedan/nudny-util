@@ -9,6 +9,7 @@ set(MOD_ALIAS "nudny::util")
 set(TESTS_DIR "test")
 set(INC_DIR "include")
 set(SRC_DIR "src/util")
+set(ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
 
 project(${MOD_NAME} VERSION 0.1.0 DESCRIPTION ${MOD_DESC})

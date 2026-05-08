@@ -16,6 +16,7 @@ namespace nd::util {
 			using que 		= std::queue<std::weak_ptr<TClass>>;
 			using callback 	= void(TClass::*)(TCallbackParams...);
 		public:
+			CallbackQueue() = default;
 			CallbackQueue( callback t_callback) : m_callback(t_callback) {} 
 			
 			void push( const sptr& t_object ) {
@@ -40,8 +41,8 @@ namespace nd::util {
 				throw std::runtime_error("Callback is null in execution queue!");
 			};
 		protected:
-			callback m_callback = nullptr;
+			callback m_callback{nullptr};
 			que	m_queue;
 			std::mutex m_mutex;
-	};
+	}; //template CallbackQueue
 }; // namespace nd::util
