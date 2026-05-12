@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.23)
 
 add_executable(${MOD_NAME}_UT
 	src/callback_queue.cpp
+	src/conversions.cpp
 )
 
 target_include_directories(${MOD_NAME}_UT
