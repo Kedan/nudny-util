@@ -32,5 +32,11 @@ namespace nd::util {
 				});
 				return *instance;
 			}
+
+			static int release() {
+				if(nullptr == *this::getInstance().release())
+					return 0;
+				throw(std::runtime_error("Could not release singleton instance!"));
+			}
 	}; // template class QuasiSingleton
 } // namespace nd::util
