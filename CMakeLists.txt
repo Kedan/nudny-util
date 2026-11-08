@@ -21,12 +21,14 @@ option(ENABLE_CLANG_TIDY "Enable clang-tidy" OFF)
 
 project(${MOD_NAME} VERSION ${MOD_VERSION} DESCRIPTION ${MOD_DESCRIPTION} LANGUAGES CXX)
 
-add_custom_target(${MOD_NAME}_coverage
-	COMMAND ${CMAKE_CTEST_COMMAND} -V --preset coverage
-	COMMAND ${CMAKE_SOURCE_DIR}/scripts/gencov.sh ${CMAKE_BINARY_DIR}
-	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-	COMMENT "Running tests and generating coverage raport"
-)
+if(NOT TARGET ${MOD_NAME}_coverage)
+	add_custom_target(${MOD_NAME}_coverage
+		COMMAND ${CMAKE_CTEST_COMMAND} -V --preset coverage
+		COMMAND ${CMAKE_SOURCE_DIR}/scripts/gencov.sh ${CMAKE_BINARY_DIR}
+		WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+		COMMENT "Running tests and generating coverage raport"
+	)
+endif()
 
 include(FetchContent)
 FetchContent_Declare(
